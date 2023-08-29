@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web3 Chat App</title>
+</head>
+<body>
+  <input id="message" placeholder="Type your message" />
+  <button id="send">Send</button>
+  <ul id="messages"></ul>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    document.getElementById('send').addEventListener('click', () => {
+      const message = document.getElementById('message').value;
+      socket.emit('chatMessage', message);
+      document.getElementById('message').value = '';
+    });
+
+    socket.on('chatMessage', (message) => {
+      const li = document.createElement('li');
+      li.textContent = message;
+      document.getElementById('messages').appendChild(li);
+    });
+  </script>
+</body>
+</html>

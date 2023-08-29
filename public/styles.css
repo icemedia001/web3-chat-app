@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#messages {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
